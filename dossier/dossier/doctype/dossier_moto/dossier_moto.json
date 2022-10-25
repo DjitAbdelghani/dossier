@@ -1,0 +1,179 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2022-08-25 12:59:58.135712",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "customer_name",
+  "prenom",
+  "ne",
+  "commune",
+  "wilaya",
+  "tarif",
+  "serial_no",
+  "item_code",
+  "item_name",
+  "taux",
+  "date",
+  "date_immatriculation",
+  "carte_jaune",
+  "n_immatriculation",
+  "annee"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "naming_series",
+   "options": ".######./.YYYY"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Client",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "serial_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "N\u00b0 de ch\u00e2ssis ",
+   "options": "Serial No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "serial_no.item_code",
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "label": "Code Article"
+  },
+  {
+   "fetch_from": "serial_no.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Article"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "date_immatriculation",
+   "fieldtype": "Date",
+   "label": "La date de premi\u00e8re immatriculation"
+  },
+  {
+   "fieldname": "n_immatriculation",
+   "fieldtype": "Data",
+   "label": "N\u00b0 d'immatriculation"
+  },
+  {
+   "fieldname": "carte_jaune",
+   "fieldtype": "Data",
+   "label": "Carte jaune"
+  },
+  {
+   "fetch_from": "customer_name.default_price_list",
+   "fieldname": "tarif",
+   "fieldtype": "Data",
+   "label": "tarif"
+  },
+  {
+   "fieldname": "annee",
+   "fieldtype": "Data",
+   "label": "Ann\u00e9e de mise en circulation"
+  },
+  {
+   "fieldname": "taux",
+   "fieldtype": "Float",
+   "label": "Prix"
+  },
+  {
+   "fetch_from": "customer_name.prenom",
+   "fieldname": "prenom",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Pr\u00e9nom"
+  },
+  {
+   "fetch_from": "customer_name.ne",
+   "fieldname": "ne",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Date Naissence"
+  },
+  {
+   "fetch_from": "customer_name.commune",
+   "fieldname": "commune",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Commune"
+  },
+  {
+   "fetch_from": "customer_name.wilaya",
+   "fieldname": "wilaya",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Wilaya"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-10-24 15:13:19.352434",
+ "modified_by": "Administrator",
+ "module": "Dossier",
+ "name": "Dossier Moto",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
